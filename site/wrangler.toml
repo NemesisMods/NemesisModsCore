@@ -1,0 +1,16 @@
+name = "nemesismods"
+main = "src/worker.ts"
+compatibility_date = "2026-10-01"
+routes = [
+  { pattern = "nemesismods.com/*", zone_name = "nemesismods.com" },
+]
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+
+# each app's own Cloudflare Pages project
+[vars]
+LAB_ORIGIN = "https://imperfectlab.pages.dev"
+BUILDER_ORIGIN = "https://labbuilder.pages.dev"
+ARENA_ORIGIN = "https://arenalab.pages.dev"
