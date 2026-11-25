@@ -1,0 +1,20 @@
+{
+  "name": "@nemesismods/workspace",
+  "version": "0.1.0",
+  "description": "Manages the character list, arena list, linked GameCube disc, and recomp port folder that all NemesisMods tools share in the browser",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepare": "npm run build",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "fake-indexeddb": "^6.0.0"
+  }
+}
