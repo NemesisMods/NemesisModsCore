@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "description": "Manages the character list, arena list, linked GameCube disc, and recomp port folder that all NemesisMods tools share in the browser",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NemesisMods/NemesisModsCore.git",
+    "directory": "workspace"
+  },
   "type": "module",
   "sideEffects": false,
   "exports": {
