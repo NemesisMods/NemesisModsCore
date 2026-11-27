@@ -1,7 +1,6 @@
 name = "nemesismodscore"
 main = "src/worker.ts"
 compatibility_date = "2026-10-01"
-compatibility_flags = ["global_fetch_strictly_public"]
 routes = [
   { pattern = "nemesismods.com/*", zone_name = "nemesismods.com" },
 ]
@@ -10,8 +9,15 @@ routes = [
 directory = "./dist"
 binding = "ASSETS"
 
-# each app's own Cloudflare Worker
-[vars]
-LAB_ORIGIN = "https://imperfectlab.esotericengineer.workers.dev"
-BUILDER_ORIGIN = "https://labbuilder.esotericengineer.workers.dev"
-ARENA_ORIGIN = "https://arenalab.esotericengineer.workers.dev"
+# each tool's own Worker, in the same Cloudflare account
+[[services]]
+binding = "LAB"
+service = "nemesismods-imperfectlab"
+
+[[services]]
+binding = "BUILDER"
+service = "nemesismods-labbuilder"
+
+[[services]]
+binding = "ARENA"
+service = "nemesismods-arenalab"

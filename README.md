@@ -9,7 +9,7 @@
 | Item | Function |
 |---|---|
 | `workspace/` | `@nemesismods/workspace` manages the character list, arena list, linked GameCube disc, and recomp port folder that ImperfectLab, Lab Builder and Arena Lab share in the browser (IndexedDB, plus a `BroadcastChannel` to tell other tabs) |
-| `site/` | Cloudflare Worker at `/`, and the router that sends `/lab/`, `/builder/` and `/arena/` to each tool's Cloudflare deployment |
+| `site/` | Cloudflare Worker at `/`, and the router that sends `/lab/`, `/builder/` and `/arena/` to each tool's Worker |
 
 The tools themselves are stored in separate repos in the [NemesisMods org](https://github.com/NemesisMods).
 
@@ -41,6 +41,5 @@ cd workspace && npm publish --access public
 
 ## Deploy
 
-Deploy as one Cloudflare Pages/Workers project per tool.<br />
-In this project's worker, set `LAB_ORIGIN`, `BUILDER_ORIGIN` and `ARENA_ORIGIN` in `site/wrangler.toml` to the tools' deployed addresses, then `cd site && npm run deploy`.<br />
-Tools on the same account's `workers.dev` subdomain need the `global_fetch_strictly_public` compatibility flag in `site/wrangler.toml`, or this worker's requests to them can fail with error 1042.
+Deploy one Cloudflare Worker per tool, in the same Cloudflare account as this project's Worker.<br />
+This project's Worker reaches them through service bindings, so they need no public address. Set each `service` in `site/wrangler.toml` to the tool's Worker name, deploy the tools first, then `cd site && npm run deploy`.
