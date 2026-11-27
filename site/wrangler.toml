@@ -1,6 +1,7 @@
 name = "nemesismods"
 main = "src/worker.ts"
 compatibility_date = "2026-10-01"
+compatibility_flags = ["global_fetch_strictly_public"]
 routes = [
   { pattern = "nemesismods.com/*", zone_name = "nemesismods.com" },
 ]
@@ -9,8 +10,8 @@ routes = [
 directory = "./dist"
 binding = "ASSETS"
 
-# each app's own Cloudflare Pages project
+# each app's own Cloudflare Worker
 [vars]
-LAB_ORIGIN = "https://imperfectlab.pages.dev"
-BUILDER_ORIGIN = "https://labbuilder.pages.dev"
-ARENA_ORIGIN = "https://arenalab.pages.dev"
+LAB_ORIGIN = "https://imperfectlab.esotericengineer.workers.dev"
+BUILDER_ORIGIN = "https://labbuilder.esotericengineer.workers.dev"
+ARENA_ORIGIN = "https://arenalab.esotericengineer.workers.dev"
