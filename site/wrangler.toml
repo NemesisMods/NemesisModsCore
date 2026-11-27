@@ -1,4 +1,4 @@
-name = "nemesismods"
+name = "nemesismodscore"
 main = "src/worker.ts"
 compatibility_date = "2026-10-01"
 compatibility_flags = ["global_fetch_strictly_public"]
