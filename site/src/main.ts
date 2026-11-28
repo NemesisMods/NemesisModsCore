@@ -1,7 +1,7 @@
 const TABS = [
   { id: 'lab', label: 'ImperfectLab' },
-  { id: 'builder', label: 'Lab Builder' },
   { id: 'arena', label: 'Arena Lab' },
+  { id: 'builder', label: 'Lab Builder' },
 ]
 
 const nav = document.querySelector<HTMLElement>('.tabs')!

@@ -28,6 +28,8 @@ cd site && npm run dev:suite
 
 This assumes you have the other tools beside this repo (`../ImperfectLab` relative to `NemesisModTools`, and `../LabBuilder`, `../ArenaLab`), or set `LAB_DIR`, `BUILDER_DIR` or `ARENA_DIR` to override. Runs at http://localhost:5180.
 
+The shell, Lab Builder and Arena Lab follow the theme picked in ImperfectLab (View > Theme): each has a `public/theme-init.js` that reads ImperfectLab's saved choice.
+
 
 ## Workspace
 
